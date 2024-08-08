@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gusteau/core/app_string.dart';
+import 'package:gusteau/core/assets/images.dart';
 import 'package:gusteau/core/extension.dart';
+import 'package:gusteau/core/widgets/main_button.dart';
 
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_text_styles.dart';
 import '../../auth/screens/sign_in_screen.dart';
 
 class OnboardCenterSection extends StatelessWidget {
-  const OnboardCenterSection({super.key});
+  const OnboardCenterSection({
+    super.key,
+    required this.index,
+  });
+
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -19,46 +27,62 @@ class OnboardCenterSection extends StatelessWidget {
         ),
         child: Column(
           children: [
-            GestureDetector(
-              onTap: () {
-                context.pushReplacement(const SignInScreen());
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Skip',
-                    style: AppTextStyles.white400Size14TextStyle,
+            index == AppImages.onboard.length - 1
+                ? const Row()
+                : GestureDetector(
+                    onTap: () {
+                      context.pushReplacement(const SignInScreen());
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Skip',
+                          style: AppTextStyles.white400Size14TextStyle,
+                        ),
+                        SizedBox(
+                          width: 4.w,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: AppColors.whiteColor,
+                          size: 14,
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(
-                    width: 4.w,
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: AppColors.whiteColor,
-                    size: 14,
-                  ),
-                ],
-              ),
-            ),
             const Spacer(),
             Text(
-              'Explore Recipes',
+              AppString.onBoardTitles[index],
               style: AppTextStyles.white700Size34TextStyle,
             ),
             SizedBox(
               height: 16.h,
             ),
             SizedBox(
-              width: context.screenWidth - 150,
+              width: context.screenWidth - 130,
               child: Text(
-                'We provide recipes based on what you have on hand',
+                AppString.onBoardSubTitles[index],
                 style: AppTextStyles.white400Size24TextStyle,
                 textAlign: TextAlign.center,
               ),
             ),
+            index == AppImages.onboard.length - 1
+                ? Padding(
+                    padding: EdgeInsets.only(
+                      left: 52.w,
+                      right: 52.w,
+                      top: 16,
+                    ),
+                    child: MainButton(
+                        onPressed: () {
+                          context.pushReplacement(const SignInScreen());
+                        },
+                        title: 'Get started'),
+                  )
+                : const SizedBox(),
             SizedBox(
-              height: 73.h,
+              height: 60.h,
             ),
           ],
         ),

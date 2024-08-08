@@ -38,7 +38,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
               return Stack(
                 children: [
                   OnboardBackgroundImages(index: index),
-                  const OnboardCenterSection(),
+                  OnboardCenterSection(index: index,),
                 ],
               );
             },
