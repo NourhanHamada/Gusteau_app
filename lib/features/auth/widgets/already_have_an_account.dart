@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gusteau/core/extension.dart';
-import 'package:gusteau/features/auth/screens/sign_up_screen.dart';
-
 import '../../../core/theming/app_text_styles.dart';
+import '../screens/sign_in_screen.dart';
 
-class DonotHaveAnAccount extends StatelessWidget {
-  const DonotHaveAnAccount({super.key});
+class AlreadyHaveAnAccount extends StatelessWidget {
+  const AlreadyHaveAnAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +12,12 @@ class DonotHaveAnAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Don\'t have an account? ',
+          'Already have an account? ',
           style: AppTextStyles.black400Size14TextStyle,
         ),
         GestureDetector(
           onTap: () {
-            context.pushReplacement(const SignUpScreen());
+            context.pushReplacement(const SignInScreen());
           },
           child: Text(
             'Sign Up',

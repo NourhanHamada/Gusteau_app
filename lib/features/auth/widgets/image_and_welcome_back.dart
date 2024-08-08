@@ -4,7 +4,9 @@ import '../../../core/assets/images.dart';
 import '../../../core/theming/app_text_styles.dart';
 
 class ImageAndWelcomeBack extends StatelessWidget {
-  const ImageAndWelcomeBack({super.key});
+  const ImageAndWelcomeBack({super.key, required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class ImageAndWelcomeBack extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(32.0),
           child: Text(
-            'Welcome back!',
+            title,
             style: AppTextStyles.black600Size22RobotoFontTextStyle,
           ),
         )
