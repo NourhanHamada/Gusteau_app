@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gusteau/core/extension.dart';
+import 'package:gusteau/features/auth/screens/verification_code_screen.dart';
 import 'package:gusteau/features/auth/widgets/sign_up_form.dart';
 import '../../../core/widgets/main_button.dart';
 import '../widgets/agree_to_terms_privacy_policy.dart';
@@ -62,7 +64,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     horizontal: 52,
                   ),
                   child: MainButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushReplacement(const VerificationCodeScreen());
+                    },
                     title: 'Sign up',
                   ),
                 ),

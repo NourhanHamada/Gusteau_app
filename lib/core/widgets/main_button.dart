@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../theming/app_colors.dart';
 import '../theming/app_text_styles.dart';
 
@@ -22,6 +23,7 @@ class MainButton extends StatelessWidget {
           color: AppColors.mainColor,
         ),
         padding: const EdgeInsets.all(14),
+        height: 52.h,
         child: Center(
           child: Text(
             title,

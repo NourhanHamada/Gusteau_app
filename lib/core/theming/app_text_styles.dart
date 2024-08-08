@@ -47,6 +47,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle black600Size22TextStyle = TextStyle(
+    color: AppColors.blackColor,
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle black400Size16TextStyle = TextStyle(
     color: AppColors.blackColor,
     fontSize: 16.sp,
@@ -83,5 +89,11 @@ class AppTextStyles {
     color: AppColors.blackColor,
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle black700Size16TextStyle = TextStyle(
+    color: AppColors.blackColor,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
   );
 }

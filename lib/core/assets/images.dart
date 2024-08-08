@@ -10,4 +10,6 @@ class AppImages {
     onboard3,
     onboard4,
   ];
+  static const String kabab = 'assets/images/kabab.png';
+  static const String milk = 'assets/images/milk.png';
 }
