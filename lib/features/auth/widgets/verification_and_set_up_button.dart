@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gusteau/core/extension.dart';
 
 import '../../../core/widgets/main_button.dart';
+import '../../layout/screens/layout_screen.dart';
 
 class VerificationAndSetUpButton extends StatelessWidget {
   const VerificationAndSetUpButton({
@@ -29,6 +31,8 @@ class VerificationAndSetUpButton extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.linear,
               );
+            } else {
+              context.pushReplacement(const LayoutScreen());
             }
           },
           title: isLastPage ? 'Start cooking' : 'Next step',

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gusteau/core/extension.dart';
+import 'package:gusteau/features/layout/screens/layout_screen.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_text_styles.dart';
 import '../widgets/verification-and_set_up_steps.dart';
@@ -31,14 +32,14 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
     });
   }
 
-  // @override
-  // void dispose() {
-  //   // pinCodeController.dispose();
-  //   pageController.removeListener(() {
-  //     pageListener();
-  //   });
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    pinCodeController.dispose();
+    pageController.removeListener(() {
+      pageListener();
+    });
+    super.dispose();
+  }
 
   pageListener() {
     if (pageController.page == 2) {
@@ -93,35 +94,37 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                 isLastPage: isLastPage,
               ),
 
-
               isFirstPage
                   ? const SizedBox()
                   : Positioned(
-                top: context.screenTopInset + 20,
-                right: 8,
-                child: GestureDetector(
-                                    onTap: () {},
-                                    child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Skip',
-                        style: AppTextStyles.white400Size14TextStyle.copyWith(
-                          color: AppColors.mainColor,
+                      top: context.screenTopInset + 20,
+                      right: 8,
+                      child: GestureDetector(
+                        onTap: () {
+                          context.pushReplacement(const LayoutScreen());
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              'Skip',
+                              style: AppTextStyles.white400Size14TextStyle
+                                  .copyWith(
+                                color: AppColors.mainColor,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 4.w,
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              color: AppColors.mainColor,
+                              size: 14,
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(
-                        width: 4.w,
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        color: AppColors.mainColor,
-                        size: 14,
-                      ),
-                    ],
-                                    ),
-                                  ),
-                  ),
+                    ),
             ],
           ),
         ),

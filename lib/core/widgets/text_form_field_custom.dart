@@ -39,6 +39,9 @@ class TextFormFieldsCustom extends StatefulWidget {
   final bool? enableInteractiveSelection;
   Widget Function(BuildContext, EditableTextState)? contextMenuBuilder;
   final TextDirection?  textDirection;
+  final Color? hintColor;
+  final double? hintSize;
+  final FontWeight? hintFontWeight;
 
   TextFormFieldsCustom({
     super.key,
@@ -77,7 +80,10 @@ class TextFormFieldsCustom extends StatefulWidget {
     this.labelText,
     this.enableInteractiveSelection,
     this.contextMenuBuilder,
-    this.textDirection
+    this.textDirection,
+    this.hintColor,
+    this.hintSize,
+    this.hintFontWeight,
   });
 
   @override
@@ -145,8 +151,9 @@ class _TextFormFieldsCustomState extends State<TextFormFieldsCustom> {
           floatingLabelBehavior: FloatingLabelBehavior.auto,
           labelText: widget.labelText,
           hintStyle: TextStyle(
-            fontSize: 14,
-            color: AppColors.grayColor,
+            fontSize: widget.hintSize ?? 14,
+            fontWeight:  widget.hintFontWeight ?? FontWeight.w400,
+            color: widget.hintColor ?? AppColors.grayColor,
           ),
           // prefixIconColor: greyColor7,
           border: OutlineInputBorder(

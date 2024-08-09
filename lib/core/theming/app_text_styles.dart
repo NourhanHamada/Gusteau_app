@@ -41,6 +41,24 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
   );
 
+  static TextStyle white500Size24TextStyle = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle white400Size28TextStyle = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 28.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle main700Size18TextStyle = TextStyle(
+    color: AppColors.mainColor,
+    fontSize: 28.sp,
+    fontWeight: FontWeight.w700,
+  );
+
   static TextStyle black600Size22RobotoFontTextStyle = GoogleFonts.roboto(
     color: AppColors.blackColor,
     fontSize: 22.sp,
@@ -77,6 +95,14 @@ class AppTextStyles {
     color: AppColors.blueColor,
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle main400Size14UnderLineTextStyle = TextStyle(
+    decoration: TextDecoration.underline,
+    decorationColor: AppColors.mainColor.withOpacity(.6),
+    color: AppColors.mainColor.withOpacity(.6),
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w100,
   );
 
   static TextStyle gray400Size14TextStyle = TextStyle(
