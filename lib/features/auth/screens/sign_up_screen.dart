@@ -65,7 +65,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   child: MainButton(
                     onPressed: () {
-                      context.pushReplacement(const VerificationCodeScreen());
+                      if (formKey.currentState!.validate()) {
+                        context.pushReplacement(const VerificationCodeScreen());
+                      }
                     },
                     title: 'Sign up',
                   ),

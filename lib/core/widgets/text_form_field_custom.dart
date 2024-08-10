@@ -179,13 +179,13 @@ class _TextFormFieldsCustomState extends State<TextFormFieldsCustom> {
           ),
           errorBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              // color: lightGreyColor,
+              color: Colors.red,
             ),
             borderRadius: BorderRadius.circular(30),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              // color: lightGreyColor,
+              color: Colors.red,
             ),
             borderRadius: BorderRadius.circular(30),
           ),
