@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gusteau/core/extension.dart';
 import 'package:gusteau/core/theming/app_colors.dart';
-
 import 'main_screen_title.dart';
 
 class MainScreenAppBar extends StatelessWidget {

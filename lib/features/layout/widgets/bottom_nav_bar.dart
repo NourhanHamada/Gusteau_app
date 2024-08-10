@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/assets/icons.dart';
 import '../../../core/theming/app_colors.dart';
 import 'bottom_bar_icon.dart';
@@ -21,6 +20,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      // Do not change selected item width make them all the same size not taking extra space.
+      type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.mainColor,
       unselectedItemColor: AppColors.blackColor,
       selectedLabelStyle: TextStyle(

@@ -49,9 +49,12 @@ class _HomeCookAgainSectionState extends State<HomeCookAgainSection> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    child: Image.asset(
-                      AppImages.pizza,
-                      fit: BoxFit.cover,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.asset(
+                        AppImages.pizza,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   );
                 },

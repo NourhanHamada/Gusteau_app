@@ -18,4 +18,17 @@ class AppIcons {
 
   static const String notificationIcon = 'assets/icons/notification.svg';
   static const String heartIcon = 'assets/icons/heart.svg';
+
+  // Profile Icons
+  static const String preferencesIcons = 'assets/icons/preferences.svg';
+  static const String allergiesIcons = 'assets/icons/allergies.svg';
+  static const String wishlistIcon = 'assets/icons/wish_list.svg';
+  static const String languageIcon = 'assets/icons/language.svg';
+  static const String notificationsIcon = 'assets/icons/notifications.svg';
+  static const String ordersIcon = 'assets/icons/orders.svg';
+  static const String addressIcons = 'assets/icons/address.svg';
+  static const String paymentIcon = 'assets/icons/payment.svg';
+  static const String securityIcon = 'assets/icons/security.svg';
+  static const String privacyIcon = 'assets/icons/privacy.svg';
+
 }

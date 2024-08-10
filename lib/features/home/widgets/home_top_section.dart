@@ -27,7 +27,7 @@ class HomeTopSection extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Hello, Sara',
+                      'Hello, Nourhan',
                       style: AppTextStyles.white400Size14TextStyle,
                     ),
                     Row(
@@ -60,7 +60,7 @@ class HomeTopSection extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: 'cook ',
-                        style: AppTextStyles.main700Size18TextStyle,
+                        style: AppTextStyles.main700Size28TextStyle,
                       ),
                       TextSpan(
                         text: 'tonight !!',

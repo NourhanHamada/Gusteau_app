@@ -13,18 +13,25 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: const [
-          HomeTopSection(),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 24,
-              vertical: 16,
+      child: Column(
+        // padding: EdgeInsets.zero,
+        children: [
+          const HomeTopSection(),
+          const Padding(
+            padding: EdgeInsets.only(
+              left: 24,
+              right: 24,
+              top: 8,
             ),
-            child: Column(
-              children: [
-                HomeSearchBar(),
+            child: HomeSearchBar(),
+          ),
+          Flexible(
+            child: ListView(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24,
+              ),
+              shrinkWrap: true,
+              children: const [
                 HomeCategories(),
                 HomeCookAgainSection(),
                 HomePopularRecipes(),
