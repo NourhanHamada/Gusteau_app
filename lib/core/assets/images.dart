@@ -23,4 +23,6 @@ class AppImages {
 
   static const String pizza = 'assets/images/pizza.png';
   static const String mixGrill = 'assets/images/mix_grill.png';
+  static const String milkCarton = 'assets/images/milk_carton.png';
+  static const String topNotch = 'assets/images/top_notch.png';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:gusteau/core/extension.dart';
+import 'package:gusteau/features/notifications/screens/notification_screen.dart';
 import '../../../core/assets/icons.dart';
 import '../../../core/assets/images.dart';
 import '../../../core/theming/app_text_styles.dart';
@@ -32,7 +33,9 @@ class HomeTopSection extends StatelessWidget {
                     Row(
                       children: [
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            context.push(const NotificationScreen());
+                          },
                           child: SvgPicture.asset(
                             AppIcons.notificationIcon,
                           ),
