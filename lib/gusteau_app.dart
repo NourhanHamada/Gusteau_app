@@ -17,8 +17,8 @@ class GusteauApp extends StatelessWidget {
         title: 'Gusteau App',
         debugShowCheckedModeBanner: false,
         theme: lightTheme(context),
-        // home: const SplashScreen(),
-        home: const LayoutScreen(),
+        home: const SplashScreen(),
+        // home: const LayoutScreen(),
       ),
     );
   }

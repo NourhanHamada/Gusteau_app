@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/assets/images.dart';
+import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_text_styles.dart';
 import '../../../core/widgets/main_card.dart';
 
@@ -12,6 +13,10 @@ class AllergiesPageView extends StatefulWidget {
 }
 
 class _AllergiesPageViewState extends State<AllergiesPageView> {
+  final List<String> items = List.generate(17, (index) => "Item $index");
+  // A set to store the selected items
+  final Set<String> selectedItems = <String>{};
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -48,14 +53,29 @@ class _AllergiesPageViewState extends State<AllergiesPageView> {
             crossAxisCount: 2,
             crossAxisSpacing: 24,
             mainAxisSpacing: 16,
-            childAspectRatio: .78,
+            childAspectRatio: .79,
           ),
           itemCount: 17,
           shrinkWrap: true,
           itemBuilder: (context, index) {
-            return const MainCard(
-              image: AppImages.milk,
-              title: 'Milk',
+            final item = items[index];
+            final isSelected = selectedItems.contains(item);
+            return GestureDetector(
+              onTap: (){
+                setState(() {
+                  if (isSelected) {
+                    selectedItems.remove(item);
+                  } else {
+                    selectedItems.add(item);
+                  }
+                });
+              },
+              child: MainCard(
+                image: AppImages.milk,
+                title: 'Milk',
+                color: isSelected ? AppColors.mainColor : AppColors.white6Color,
+                titleColor: isSelected ? AppColors.white6Color : AppColors.blackColor,
+              ),
             );
           },
         )
