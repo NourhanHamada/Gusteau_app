@@ -1,10 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:gusteau/core/assets/images.dart';
+import 'package:gusteau/core/theming/app_colors.dart';
+import 'package:gusteau/features/home/widgets/home_popular_recipes_item.dart';
 import 'package:gusteau/features/home/widgets/home_title.dart';
 import '../../../core/theming/app_text_styles.dart';
 import 'home_categories_item.dart';
 
-class HomeCategories extends StatelessWidget {
+class HomeCategories extends StatefulWidget {
   const HomeCategories({super.key});
 
   static const List<String> categoriesTitles = [
@@ -23,6 +25,18 @@ class HomeCategories extends StatelessWidget {
   ];
 
   @override
+  State<HomeCategories> createState() => _HomeCategoriesState();
+}
+
+class _HomeCategoriesState extends State<HomeCategories> {
+  int selectedItem = -1;
+  bool isVisible = false;
+  final List<String> items = List.generate(14, (index) => "Item $index");
+
+  // A set to store the selected items
+  final Set<String> selectedItems = <String>{};
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -30,7 +44,7 @@ class HomeCategories extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const HomeTitle(
-             title:  'Categories',
+              title: 'Categories',
             ),
             Text(
               'See all',
@@ -41,23 +55,84 @@ class HomeCategories extends StatelessWidget {
         SizedBox(
           height: 100,
           child: ListView.builder(
-            itemCount: categoriesImages.length,
+            itemCount: HomeCategories.categoriesImages.length,
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return Padding(
-                padding:  EdgeInsets.only(
+                padding: EdgeInsets.only(
                   left: index == 0 ? 0 : 8,
                   right: 8,
                 ),
-                child: HomeCategoriesItem(
-                  title: categoriesTitles[index],
-                  image: categoriesImages[index],
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedItem = index;
+                      isVisible = true;
+                    });
+                  },
+                  child: HomeCategoriesItem(
+                    title: HomeCategories.categoriesTitles[index],
+                    image: HomeCategories.categoriesImages[index],
+                    backgroundColor: selectedItem == index
+                        ? AppColors.mainColor
+                        : AppColors.pinkColor,
+                  ),
                 ),
               );
             },
           ),
-        )
+        ),
+        Visibility(
+          visible: isVisible,
+          child: SizedBox(
+            height: 180,
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: 14,
+              itemBuilder: (context, index) {
+                final item = items[index];
+                final isSelected = selectedItems.contains(item);
+                return  Padding(
+                  padding: const EdgeInsets.only(
+                    right: 12
+                  ),
+                  child: GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        setState(() {
+                          if (isSelected) {
+                            selectedItems.remove(item);
+                          } else {
+                            selectedItems.add(item);
+                          }
+                        });
+                      });
+                    },
+                    child: HomePopularRecipeItem(
+                        image: AppImages.molokhya,
+                        title: 'Egyptian Molokhya',
+                        titleTextStyle: AppTextStyles.white600Size12TextStyle,
+                        time: '30 Min',
+                      icon: isSelected
+                          ? Icon(
+                        CupertinoIcons.heart_fill,
+                        color: AppColors.mainColor,
+                        size: 16,
+                      )
+                          : const Icon(
+                        CupertinoIcons.heart,
+                        size: 16,
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
       ],
     );
   }

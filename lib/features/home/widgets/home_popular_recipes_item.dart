@@ -9,11 +9,14 @@ class HomePopularRecipeItem extends StatelessWidget {
     required this.image,
     required this.title,
     required this.time,
+    this.icon, this.titleTextStyle,
   });
 
   final String image;
   final String title;
   final String time;
+  final Widget? icon;
+  final TextStyle? titleTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -38,17 +41,22 @@ class HomePopularRecipeItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: AppTextStyles.white400Size14TextStyle,
+                  style: titleTextStyle ?? AppTextStyles.white400Size14TextStyle,
                 ),
                 Row(
                   children: [
-                    Icon(Icons.access_time, color: AppColors.whiteColor, size: 14,),
+                    Icon(
+                      Icons.access_time,
+                      color: AppColors.whiteColor,
+                      size: 14,
+                    ),
                     const SizedBox(
                       width: 4,
                     ),
                     Text(
                       time,
-                      style: AppTextStyles.black400Size12TextStyle.copyWith(color: AppColors.whiteColor),
+                      style: AppTextStyles.black400Size12TextStyle
+                          .copyWith(color: AppColors.whiteColor),
                     ),
                   ],
                 ),
@@ -64,7 +72,7 @@ class HomePopularRecipeItem extends StatelessWidget {
                 color: AppColors.whiteColor,
               ),
               padding: const EdgeInsets.all(3),
-              child: const Icon(CupertinoIcons.heart, size: 16,),
+              child: icon ?? const Icon(CupertinoIcons.heart, size: 16,),
             ),
           ),
         ],

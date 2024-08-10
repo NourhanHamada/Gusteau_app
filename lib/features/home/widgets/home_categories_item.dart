@@ -6,11 +6,12 @@ class HomeCategoriesItem extends StatelessWidget {
   const HomeCategoriesItem({
     super.key,
     required this.title,
-    required this.image,
+    required this.image, this.backgroundColor,
   });
 
   final String title;
   final String image;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +21,9 @@ class HomeCategoriesItem extends StatelessWidget {
           height: 77,
           width: 60,
           decoration: BoxDecoration(
-              color: AppColors.pinkColor,
-              borderRadius: BorderRadius.circular(30)),
+              color: backgroundColor ?? AppColors.pinkColor,
+              borderRadius: BorderRadius.circular(30),
+          ),
           child: Image.asset(image),
         ),
         Text(

@@ -19,6 +19,7 @@ dependencies:
   smooth_page_indicator:
   pin_code_fields:
   easy_stepper:
+  flutter_timer_countdown:
 
 dev_dependencies:
   flutter_test:

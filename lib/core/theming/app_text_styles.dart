@@ -42,6 +42,13 @@ class AppTextStyles {
     height: 1.4,
   );
 
+  static TextStyle white600Size12TextStyle = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+    height: 1.4,
+  );
+
   static TextStyle white600Size20TextStyle = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 20.sp,
