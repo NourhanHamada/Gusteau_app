@@ -83,6 +83,8 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                       VerificationAndSetUpSteps(
                         isFirstPage: isFirstPage,
                         activeStep: activeStep,
+                        onStepReached: (index) =>
+                            setState(() => activeStep = index),
                       ),
                     ],
                   ),
@@ -92,6 +94,19 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
               VerificationAndSetUpButton(
                 pageController: pageController,
                 isLastPage: isLastPage,
+                onPressed: () {
+                  setState(() {
+                    activeStep = pageController.page!.toInt() + 1;
+                  });
+                  if (!isLastPage) {
+                    pageController.nextPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.linear,
+                    );
+                  } else {
+                    context.pushReplacement(const LayoutScreen());
+                  }
+                },
               ),
 
               isFirstPage

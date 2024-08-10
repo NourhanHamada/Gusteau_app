@@ -9,11 +9,12 @@ class VerificationAndSetUpButton extends StatelessWidget {
   const VerificationAndSetUpButton({
     super.key,
     required this.pageController,
-    required this.isLastPage,
+    required this.isLastPage, required this.onPressed,
   });
 
   final PageController pageController;
   final bool isLastPage;
+  final Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +26,7 @@ class VerificationAndSetUpButton extends StatelessWidget {
           vertical: 32,
         ),
         child: MainButton(
-          onPressed: () {
-            if (!isLastPage) {
-              pageController.nextPage(
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.linear,
-              );
-            } else {
-              context.pushReplacement(const LayoutScreen());
-            }
-          },
+          onPressed: onPressed,
           title: isLastPage ? 'Start cooking' : 'Next step',
         ),
       ),
