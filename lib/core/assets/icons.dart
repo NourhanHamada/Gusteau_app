@@ -17,6 +17,7 @@ class AppIcons {
   static const String profileEnabledIcon = 'assets/icons/profile_enabled.svg';
 
   static const String notificationIcon = 'assets/icons/notification.svg';
+  static const String notificationBlackIcon = 'assets/icons/notification_black.svg';
   static const String heartIcon = 'assets/icons/heart.svg';
 
   // Profile Icons

@@ -26,4 +26,5 @@ class AppImages {
   static const String milkCarton = 'assets/images/milk_carton.png';
   static const String topNotch = 'assets/images/top_notch.png';
   static const String molokhya = 'assets/images/molokhya.png';
+  static const String pancake = 'assets/images/pankcake.png';
 }

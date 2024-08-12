@@ -4,6 +4,8 @@ import 'package:gusteau/features/home/screens/home_screen.dart';
 import 'package:gusteau/features/profile/screens/profile_screen.dart';
 import '../../../core/assets/icons.dart';
 import '../../../core/theming/app_colors.dart';
+import '../../schedule/screens/schedule_screen.dart';
+import '../../schedule/widgets/schedule_screen_floating_button.dart';
 import '../widgets/bottom_bar_icon.dart';
 
 class LayoutScreen extends StatefulWidget {
@@ -19,7 +21,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
     const HomeScreen(),
     const HomeScreen(),
     const HomeScreen(),
-    const HomeScreen(),
+    const ScheduleScreen(),
     const ProfileScreen(),
   ];
 
@@ -126,6 +128,8 @@ class _LayoutScreenState extends State<LayoutScreen> {
           ),
         ),
       ),
+      floatingActionButton:
+          currentIndex == 3 ? const ScheduleScreenFloatingButton() : null,
     );
   }
 }

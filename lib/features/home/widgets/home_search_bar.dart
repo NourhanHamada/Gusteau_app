@@ -17,7 +17,7 @@ class HomeSearchBar extends StatelessWidget {
         size: 16,
       ),
       filled: true,
-      fillColor: AppColors.white6Color,
+      fillColor: AppColors.black1Color.withOpacity(.03),
       borderColor: AppColors.transparentColor,
       hintText: 'Search here',
       hintColor: AppColors.black1Color,
