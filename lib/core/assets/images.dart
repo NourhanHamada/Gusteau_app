@@ -27,4 +27,6 @@ class AppImages {
   static const String topNotch = 'assets/images/top_notch.png';
   static const String molokhya = 'assets/images/molokhya.png';
   static const String pancake = 'assets/images/pankcake.png';
+  static const String kheirZaman = 'assets/images/kheir_zaman.png';
+  static const String kark = 'assets/images/kark.png';
 }

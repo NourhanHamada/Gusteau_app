@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gusteau/features/home/screens/home_screen.dart';
 import 'package:gusteau/features/profile/screens/profile_screen.dart';
+import 'package:gusteau/features/shop/screens/shop_screen.dart';
 import '../../../core/assets/icons.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../schedule/screens/schedule_screen.dart';
@@ -20,7 +21,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
   List<Widget> screens = [
     const HomeScreen(),
     const HomeScreen(),
-    const HomeScreen(),
+    const ShopScreen(),
     const ScheduleScreen(),
     const ProfileScreen(),
   ];

@@ -19,7 +19,7 @@ class ScheduleScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
-                const ScheduleSearchBarAndNotificationsSection(),
+                const SearchBarAndNotificationsSection(),
                 const SizedBox(
                   height: 16,
                 ),

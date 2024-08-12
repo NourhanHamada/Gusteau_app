@@ -98,6 +98,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
   );
 
+  static TextStyle main700Size12TextStyle = TextStyle(
+    color: AppColors.mainColor,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w700,
+  );
+
   static TextStyle main700Size28TextStyle = TextStyle(
     color: AppColors.mainColor,
     fontSize: 28.sp,
