@@ -42,6 +42,7 @@ class TextFormFieldsCustom extends StatefulWidget {
   final Color? hintColor;
   final double? hintSize;
   final FontWeight? hintFontWeight;
+  final double? radius;
 
   TextFormFieldsCustom({
     super.key,
@@ -84,6 +85,7 @@ class TextFormFieldsCustom extends StatefulWidget {
     this.hintColor,
     this.hintSize,
     this.hintFontWeight,
+    this.radius,
   });
 
   @override
@@ -91,6 +93,8 @@ class TextFormFieldsCustom extends StatefulWidget {
 }
 
 class _TextFormFieldsCustomState extends State<TextFormFieldsCustom> {
+
+  double radius = 30;
 
   @override
   Widget build(BuildContext context) {
@@ -157,12 +161,12 @@ class _TextFormFieldsCustomState extends State<TextFormFieldsCustom> {
           ),
           // prefixIconColor: greyColor7,
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(widget.radius ?? radius),
               borderSide: const BorderSide(
                 // color: widget.borderColor ?? lightGreyColor,
               )),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(widget.radius ?? radius),
             borderSide: BorderSide(
               color: widget.borderColor ?? AppColors.lightGrayColor,
             ),
@@ -172,7 +176,7 @@ class _TextFormFieldsCustomState extends State<TextFormFieldsCustom> {
             horizontal: 20,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(widget.radius ?? radius),
             borderSide:  BorderSide(
               color: AppColors.lightGrayColor,
             ),
@@ -181,13 +185,13 @@ class _TextFormFieldsCustomState extends State<TextFormFieldsCustom> {
             borderSide: const BorderSide(
               color: Colors.red,
             ),
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(widget.radius ?? radius),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: Colors.red,
             ),
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(widget.radius ?? radius),
           ),
         ),
         obscureText: widget.isPassword!,

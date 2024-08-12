@@ -9,7 +9,10 @@ class HomePopularRecipeItem extends StatelessWidget {
     required this.image,
     required this.title,
     required this.time,
-    this.icon, this.titleTextStyle,
+    this.icon,
+    this.titleTextStyle,
+    this.onHeartTap,
+    this.onImageTap,
   });
 
   final String image;
@@ -17,6 +20,8 @@ class HomePopularRecipeItem extends StatelessWidget {
   final String time;
   final Widget? icon;
   final TextStyle? titleTextStyle;
+  final Function()? onHeartTap;
+  final Function()? onImageTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +31,14 @@ class HomePopularRecipeItem extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(30),
-            child: Image.asset(
-              image,
-              fit: BoxFit.fill,
+          GestureDetector(
+            onTap: onImageTap,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image.asset(
+                image,
+                fit: BoxFit.fill,
+              ),
             ),
           ),
           Positioned(
@@ -41,7 +49,8 @@ class HomePopularRecipeItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: titleTextStyle ?? AppTextStyles.white400Size14TextStyle,
+                  style:
+                      titleTextStyle ?? AppTextStyles.white400Size14TextStyle,
                 ),
                 Row(
                   children: [
@@ -66,13 +75,20 @@ class HomePopularRecipeItem extends StatelessWidget {
           Positioned(
             right: 20,
             top: 12,
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.whiteColor,
+            child: GestureDetector(
+              onTap: onHeartTap,
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.whiteColor,
+                ),
+                padding: const EdgeInsets.all(3),
+                child: icon ??
+                    const Icon(
+                      CupertinoIcons.heart,
+                      size: 16,
+                    ),
               ),
-              padding: const EdgeInsets.all(3),
-              child: icon ?? const Icon(CupertinoIcons.heart, size: 16,),
             ),
           ),
         ],

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gusteau/core/assets/images.dart';
+import 'package:gusteau/core/extension.dart';
 import 'package:gusteau/core/theming/app_colors.dart';
+import 'package:gusteau/features/home/screens/recipe_screen.dart';
 import 'package:gusteau/features/home/widgets/home_popular_recipes_item.dart';
 import 'package:gusteau/features/home/widgets/home_title.dart';
 import '../../../core/theming/app_text_styles.dart';
@@ -104,33 +106,32 @@ class _HomeCategoriesState extends State<HomeCategories> {
                     padding: const EdgeInsets.only(
                       right: 12
                     ),
-                    child: GestureDetector(
-                      onTap: (){
+                    child: HomePopularRecipeItem(
+                        image: AppImages.molokhya,
+                        title: 'Egyptian Molokhya',
+                        titleTextStyle: AppTextStyles.white600Size12TextStyle,
+                        time: '30 Min',
+                      onHeartTap: (){
                         setState(() {
-                          setState(() {
-                            if (isSelected) {
-                              selectedItems.remove(item);
-                            } else {
-                              selectedItems.add(item);
-                            }
-                          });
+                          if (isSelected) {
+                            selectedItems.remove(item);
+                          } else {
+                            selectedItems.add(item);
+                          }
                         });
                       },
-                      child: HomePopularRecipeItem(
-                          image: AppImages.molokhya,
-                          title: 'Egyptian Molokhya',
-                          titleTextStyle: AppTextStyles.white600Size12TextStyle,
-                          time: '30 Min',
-                        icon: isSelected
-                            ? Icon(
-                          CupertinoIcons.heart_fill,
-                          color: AppColors.mainColor,
-                          size: 16,
-                        )
-                            : const Icon(
-                          CupertinoIcons.heart,
-                          size: 16,
-                        ),
+                      onImageTap: (){
+                          context.push(const RecipeScreen());
+                      },
+                      icon: isSelected
+                          ? Icon(
+                        CupertinoIcons.heart_fill,
+                        color: AppColors.mainColor,
+                        size: 16,
+                      )
+                          : const Icon(
+                        CupertinoIcons.heart,
+                        size: 16,
                       ),
                     ),
                   );

@@ -29,4 +29,5 @@ class AppImages {
   static const String pancake = 'assets/images/pankcake.png';
   static const String kheirZaman = 'assets/images/kheir_zaman.png';
   static const String kark = 'assets/images/kark.png';
+  static const String shrimp = 'assets/images/shrimp.png';
 }
