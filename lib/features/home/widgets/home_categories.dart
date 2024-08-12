@@ -83,53 +83,59 @@ class _HomeCategoriesState extends State<HomeCategories> {
             },
           ),
         ),
-        Visibility(
-          visible: isVisible,
-          child: SizedBox(
-            height: 180,
-            child: ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: 14,
-              itemBuilder: (context, index) {
-                final item = items[index];
-                final isSelected = selectedItems.contains(item);
-                return  Padding(
-                  padding: const EdgeInsets.only(
-                    right: 12
-                  ),
-                  child: GestureDetector(
-                    onTap: (){
-                      setState(() {
+        AnimatedOpacity(
+          duration: const Duration(seconds: 2),
+          opacity: isVisible ? 1 : 0.3,
+          child: Visibility(
+            visible: isVisible,
+            maintainAnimation: true,
+            maintainState: true,
+            child: SizedBox(
+              height: 180,
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: 14,
+                itemBuilder: (context, index) {
+                  final item = items[index];
+                  final isSelected = selectedItems.contains(item);
+                  return  Padding(
+                    padding: const EdgeInsets.only(
+                      right: 12
+                    ),
+                    child: GestureDetector(
+                      onTap: (){
                         setState(() {
-                          if (isSelected) {
-                            selectedItems.remove(item);
-                          } else {
-                            selectedItems.add(item);
-                          }
+                          setState(() {
+                            if (isSelected) {
+                              selectedItems.remove(item);
+                            } else {
+                              selectedItems.add(item);
+                            }
+                          });
                         });
-                      });
-                    },
-                    child: HomePopularRecipeItem(
-                        image: AppImages.molokhya,
-                        title: 'Egyptian Molokhya',
-                        titleTextStyle: AppTextStyles.white600Size12TextStyle,
-                        time: '30 Min',
-                      icon: isSelected
-                          ? Icon(
-                        CupertinoIcons.heart_fill,
-                        color: AppColors.mainColor,
-                        size: 16,
-                      )
-                          : const Icon(
-                        CupertinoIcons.heart,
-                        size: 16,
+                      },
+                      child: HomePopularRecipeItem(
+                          image: AppImages.molokhya,
+                          title: 'Egyptian Molokhya',
+                          titleTextStyle: AppTextStyles.white600Size12TextStyle,
+                          time: '30 Min',
+                        icon: isSelected
+                            ? Icon(
+                          CupertinoIcons.heart_fill,
+                          color: AppColors.mainColor,
+                          size: 16,
+                        )
+                            : const Icon(
+                          CupertinoIcons.heart,
+                          size: 16,
+                        ),
                       ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ),
         ),

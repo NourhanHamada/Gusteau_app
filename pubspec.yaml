@@ -20,6 +20,9 @@ dependencies:
   pin_code_fields:
   easy_stepper:
   flutter_timer_countdown:
+#  flutter_facebook_auth:
+#  google_sign_in:
+#  sign_in_with_apple:
 
 dev_dependencies:
   flutter_test:

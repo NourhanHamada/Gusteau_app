@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gusteau/features/home/screens/home_screen.dart';
 import 'package:gusteau/features/profile/screens/profile_screen.dart';
 import '../../../core/assets/icons.dart';
@@ -21,6 +22,15 @@ class _LayoutScreenState extends State<LayoutScreen> {
     const HomeScreen(),
     const ProfileScreen(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: AppColors.transparentColor,
+      statusBarBrightness: Brightness.dark,
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {

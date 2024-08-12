@@ -20,7 +20,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
             context.pushReplacement(const SignInScreen());
           },
           child: Text(
-            'Sign Up',
+            'Sign In',
             style: AppTextStyles.mainColor600Size16TextStyle,
           ),
         ),

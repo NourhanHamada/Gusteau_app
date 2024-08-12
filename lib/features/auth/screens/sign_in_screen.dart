@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gusteau/core/extension.dart';
 import 'package:gusteau/features/auth/screens/verification_code_screen.dart';
+import '../../../core/theming/app_colors.dart';
 import '../../../core/widgets/main_button.dart';
 import '../widgets/donot_have_an_account.dart';
 import '../widgets/image_and_welcome_back.dart';
@@ -27,6 +29,10 @@ class _SignInScreenState extends State<SignInScreen> {
     emailTextEditingController = TextEditingController();
     passwordTextEditingController = TextEditingController();
     formKey = GlobalKey<FormState>();
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: AppColors.transparentColor,
+      statusBarBrightness: Brightness.light,
+    ));
   }
 
   @override
