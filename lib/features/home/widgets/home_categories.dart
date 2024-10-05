@@ -50,7 +50,7 @@ class _HomeCategoriesState extends State<HomeCategories> {
             ),
             Text(
               'See all',
-              style: AppTextStyles.main400Size14UnderLineTextStyle,
+              style: AppTextStyles.main400Size12UnderLineTextStyle,
             ),
           ],
         ),

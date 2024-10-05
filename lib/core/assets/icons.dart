@@ -31,5 +31,9 @@ class AppIcons {
   static const String paymentIcon = 'assets/icons/payment.svg';
   static const String securityIcon = 'assets/icons/security.svg';
   static const String privacyIcon = 'assets/icons/privacy.svg';
+  static const String fire = 'assets/icons/fire.svg';
+  static const String chefHat = 'assets/icons/chef_hat.svg';
+  static const String people = 'assets/icons/people.svg';
+  static const String youtube = 'assets/icons/youtube.svg';
 
 }

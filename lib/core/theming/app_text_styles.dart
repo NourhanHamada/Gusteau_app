@@ -172,7 +172,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle main400Size14UnderLineTextStyle = TextStyle(
+  static TextStyle main400Size12UnderLineTextStyle = TextStyle(
     decoration: TextDecoration.underline,
     decorationColor: AppColors.mainColor.withOpacity(.6),
     color: AppColors.mainColor.withOpacity(.6),

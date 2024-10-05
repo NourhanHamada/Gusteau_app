@@ -56,11 +56,23 @@ extension NavigatorHelper on BuildContext {
     ));
   }
 
+  Future<dynamic> pushReplacementNamed(String routeName, {Object? arguments}) {
+    return Navigator.of(this)
+        .pushReplacementNamed(routeName, arguments: arguments);
+  }
+
   void pushAndRemoveUtils(Widget widget) {
     Navigator.of(this).pushAndRemoveUntil(
       MaterialPageRoute(builder: (context) => widget),
       (route) => false,
     );
+  }
+
+  Future<dynamic> pushAndRemoveUtilsNamed(String routeName,
+      {Object? arguments}) {
+    return Navigator.of(this).pushNamedAndRemoveUntil(
+        routeName, (route) => false,
+        arguments: arguments);
   }
 }
 
@@ -82,4 +94,5 @@ extension RandomListItem<T> on List<T> {
 extension ShowDataInOwnFormat on DateTime {
   String showDateInOwnFormat() {
     return '$day/$month/$year';
-  }}
+  }
+}

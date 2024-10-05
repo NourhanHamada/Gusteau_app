@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gusteau/core/extension.dart';
-import 'package:gusteau/features/auth/screens/sign_up_screen.dart';
-
+import '../../../core/routing/routes.dart';
 import '../../../core/theming/app_text_styles.dart';
 
 class DonotHaveAnAccount extends StatelessWidget {
@@ -18,7 +17,7 @@ class DonotHaveAnAccount extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            context.pushReplacement(const SignUpScreen());
+            context.pushReplacementNamed(Routes.signupScreen);
           },
           child: Text(
             'Sign Up',

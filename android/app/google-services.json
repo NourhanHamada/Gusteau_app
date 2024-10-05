@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1076634113209",
+    "project_id": "gusteau-35283",
+    "storage_bucket": "gusteau-35283.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076634113209:android:ae9d369b83ba7447867768",
+        "android_client_info": {
+          "package_name": "com.example.gusteau"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-Rtrqil8ab1tWIpZdm-NDuoNO3rKc-Z8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

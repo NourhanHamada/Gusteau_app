@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gusteau/core/extension.dart';
+import 'package:gusteau/core/routing/routes.dart';
 import 'package:gusteau/core/theming/app_colors.dart';
-import 'package:gusteau/features/onboard/screens/onboard_screen.dart';
 import '../widgets/splash_chef.dart';
 import '../widgets/splash_main_text.dart';
 import '../widgets/splash_sub_title.dart';
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed((const Duration(seconds: 4)), () {
-      context.pushReplacement(const OnboardScreen());
+      if (mounted) context.pushReplacementNamed(Routes.onboardingScreen);
     });
   }
 

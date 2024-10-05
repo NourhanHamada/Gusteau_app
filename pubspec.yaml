@@ -21,6 +21,20 @@ dependencies:
   easy_stepper:
   flutter_timer_countdown:
   intl:
+  connectivity_plus:
+  flutter_langdetect:
+  get_it:
+  bloc:
+  flutter_bloc:
+  dio:
+  json_serializable:
+  json_annotation:
+  freezed:
+  freezed_annotation:
+  build_runner:
+  firebase_core:
+  firebase_auth:
+  fluttertoast:
 #  flutter_facebook_auth:
 #  google_sign_in:
 #  sign_in_with_apple:

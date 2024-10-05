@@ -3,11 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gusteau/core/app_string.dart';
 import 'package:gusteau/core/assets/images.dart';
 import 'package:gusteau/core/extension.dart';
+import 'package:gusteau/core/routing/routes.dart';
 import 'package:gusteau/core/widgets/main_button.dart';
-
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_text_styles.dart';
-import '../../auth/screens/sign_in_screen.dart';
 
 class OnboardCenterSection extends StatelessWidget {
   const OnboardCenterSection({
@@ -31,7 +30,7 @@ class OnboardCenterSection extends StatelessWidget {
                 ? const Row()
                 : GestureDetector(
                     onTap: () {
-                      context.pushReplacement(const SignInScreen());
+                      context.pushReplacementNamed(Routes.signinScreen);
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -76,7 +75,7 @@ class OnboardCenterSection extends StatelessWidget {
                     ),
                     child: MainButton(
                         onPressed: () {
-                          context.pushReplacement(const SignInScreen());
+                          context.pushReplacementNamed(Routes.signinScreen);
                         },
                         title: 'Get started'),
                   )

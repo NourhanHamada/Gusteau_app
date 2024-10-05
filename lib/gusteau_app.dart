@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gusteau/core/theming/light_theme.dart';
-import 'package:gusteau/features/layout/screens/layout_screen.dart';
-import 'features/splash/screens/splash_screen.dart';
+import 'core/routing/app_router.dart';
+import 'core/routing/routes.dart';
 
-class GusteauApp extends StatelessWidget {
+class GusteauApp extends StatefulWidget {
   const GusteauApp({super.key});
 
   @override
+  State<GusteauApp> createState() => _GusteauAppState();
+}
+
+class _GusteauAppState extends State<GusteauApp> {
+
+
+  @override
   Widget build(BuildContext context) {
-    return  ScreenUtilInit(
+    return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
@@ -17,8 +24,8 @@ class GusteauApp extends StatelessWidget {
         title: 'Gusteau App',
         debugShowCheckedModeBanner: false,
         theme: lightTheme(context),
-        // home: const SplashScreen(),
-        home: const LayoutScreen(),
+        initialRoute: Routes.splashScreen,
+        onGenerateRoute: AppRouter().generateRoute,
       ),
     );
   }

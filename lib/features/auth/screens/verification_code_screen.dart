@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gusteau/core/extension.dart';
-import 'package:gusteau/features/layout/screens/layout_screen.dart';
+import 'package:gusteau/core/routing/routes.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_text_styles.dart';
 import '../widgets/verification-and_set_up_steps.dart';
@@ -104,7 +104,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                       curve: Curves.linear,
                     );
                   } else {
-                    context.pushReplacement(const LayoutScreen());
+                    context.pushReplacementNamed(Routes.layout);
                   }
                 },
               ),
@@ -116,7 +116,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                       right: 8,
                       child: GestureDetector(
                         onTap: () {
-                          context.pushReplacement(const LayoutScreen());
+                          context.pushReplacementNamed(Routes.layout);
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
