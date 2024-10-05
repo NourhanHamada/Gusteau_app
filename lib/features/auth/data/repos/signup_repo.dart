@@ -13,13 +13,8 @@ class SignupRepo {
         email: signupRequestBody.email,
         password: signupRequestBody.password,
       );
-
-
       await userCredential.user?.updateProfile(displayName: signupRequestBody.displayName);
-
-
-
-
+      await sendEmailVerification(userCredential.user);
       debugPrint('User signed up: ${userCredential.user?.email}');
       return FirebaseResult.success(userCredential);
     } on FirebaseAuthException catch (error) {
@@ -33,4 +28,12 @@ class SignupRepo {
       );
     }
   }
+
+  Future<void> sendEmailVerification(User? user) async {
+    if (user != null && !user.emailVerified) {
+      await user.sendEmailVerification();
+      debugPrint("Verification email sent to ${user.email}");
+    }
+  }
 }
+
