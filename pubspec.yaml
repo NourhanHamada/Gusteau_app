@@ -35,6 +35,8 @@ dependencies:
   firebase_core:
   firebase_auth:
   fluttertoast:
+  flutter_secure_storage:
+  shared_preferences:
 #  flutter_facebook_auth:
 #  google_sign_in:
 #  sign_in_with_apple:

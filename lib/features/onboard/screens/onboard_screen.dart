@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gusteau/core/assets/images.dart';
+import 'package:gusteau/core/helpers/cache_helper.dart';
+import '../../../core/chche_keys.dart';
 import '../widgets/onboard_background_images.dart';
 import '../widgets/onboard_center_section.dart';
 import '../widgets/onboard_indicator.dart';
@@ -17,6 +19,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
   @override
   void initState() {
     super.initState();
+    CacheHelper.setData(key: CacheKeys.isFirstSeen, value: true);
     pageController = PageController();
   }
 
